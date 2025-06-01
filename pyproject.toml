@@ -19,10 +19,17 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
 ]
+dependencies = [
+    "build-wheel-metadata>=0.0.1",
+    "commitizen>=4.0.0",
+]
 
 [project.urls]
 Repository = "https://github.com/hmiladhia/commitizen-wheel-provider"
 Issues = "https://github.com/hmiladhia/commitizen-wheel-provider/issues"
+
+[project.entry-points."commitizen.provider"]
+wheel = "commitizen_wheel_provider:WheelProvider"
 
 [dependency-groups]
 dev = [{ include-group = "tests" }]
@@ -39,10 +46,10 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.version]
-path = "src/commitizen_wheel_provider/__init__.py"
+path = "src/commitizen_wheel_provider.py"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/commitizen_wheel_provider"]
+packages = ["src/commitizen_wheel_provider.py"]
 sources = ["src"]
 
 # == Workspace Tools ==
