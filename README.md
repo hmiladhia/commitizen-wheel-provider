@@ -9,11 +9,22 @@
 
 A commitizen provider based on wheel metadata.
 
-## Quick Start
+## Installation
 
-```
+```bash
 pip install commitizen-wheel-provider
+
+# Using pipx
+pipx install commitizen
+pipx inject commitizen commitizen-wheel-provider
+
+# Using uv
+uv tool install --with commitizen-wheel-provider commitizen
 ```
 
-## Contribute
-...
+## Usage
+
+```toml
+[tool.commitizen]
+version_provider = "wheel"
+```
